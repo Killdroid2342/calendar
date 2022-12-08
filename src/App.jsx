@@ -1,7 +1,13 @@
 import React from 'react';
+import CalendarLogic from './components/Calendar/CalendarLogic';
 
 function App() {
-  return <div className='App'>sd</div>;
+  document.title = 'Calendar';
+  return (
+    <>
+      <CalendarLogic />
+    </>
+  );
 }
 
 export default App;
