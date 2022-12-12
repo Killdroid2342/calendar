@@ -29,7 +29,9 @@ function App() {
           <header className='flex justify-evenly m-3'>
             <button className='bg-red-200 text-lg font-bold'>{'<<'}</button>
             <button className='bg-red-200 text-lg font-bold'>{'<'}</button>
-            <div className='bg-red-200 text-lg font-bold'></div>
+            <div className='bg-red-200 text-lg font-bold'>
+              {allMonths[monthIndex]}
+            </div>
             <button className='bg-red-200 text-lg font-bold'>{'>'}</button>
             <button className='bg-red-200 text-lg font-bold'>{'>>'}</button>
           </header>
