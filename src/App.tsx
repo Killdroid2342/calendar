@@ -45,9 +45,6 @@ function App() {
             ))}
           </div>
         </div>
-        {/* <p className='border-white npmborder-2 p-2 ' onClick={test}>
-          Here Is Your Selected Date: {date.toDateString()}
-        </p> */}
       </div>
     </>
   );
