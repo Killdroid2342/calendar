@@ -24,8 +24,8 @@ function App() {
   console.log(currentDate);
   return (
     <>
-      <div className='border-2 border-white rounded-md flex flex-col items-center justify-center text-center p-4'>
-        <div className='w-96 h-96 mx-auto bg-slate-400'>
+      <div className='flex flex-col items-center justify-center text-center p-4'>
+        <div className='w-96 h-96 mx-auto bg-slate-400 border-2 border-black rounded-md '>
           <header className='flex justify-evenly m-3'>
             <button className='bg-red-200 text-lg font-bold'>{'<<'}</button>
             <button className='bg-red-200 text-lg font-bold'>{'<'}</button>
