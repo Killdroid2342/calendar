@@ -25,15 +25,15 @@ function App() {
   return (
     <>
       <div className='flex flex-col items-center justify-center text-center p-4'>
-        <div className='w-96 h-96 mx-auto bg-slate-400 border-2 border-black rounded-md '>
+        <div className='w-96 h-96 mx-auto bg-slate-400 border-4 border-white rounded-md '>
           <header className='flex justify-evenly m-3'>
-            <button className='bg-red-200 text-lg font-bold'>{'<<'}</button>
-            <button className='bg-red-200 text-lg font-bold'>{'<'}</button>
-            <div className='bg-red-200 text-lg font-bold'>
+            <button className='bg-white text-lg font-bold'>{'<<'}</button>
+            <button className='bg-white text-lg font-bold'>{'<'}</button>
+            <div className='bg-white text-lg font-bold'>
               {allMonths[monthIndex]}
             </div>
-            <button className='bg-red-200 text-lg font-bold'>{'>'}</button>
-            <button className='bg-red-200 text-lg font-bold'>{'>>'}</button>
+            <button className='bg-white text-lg font-bold'>{'>'}</button>
+            <button className='bg-white text-lg font-bold'>{'>>'}</button>
           </header>
           {/* MONDAY TO SUN */}
           <div className='flex justify-evenly'>
