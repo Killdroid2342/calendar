@@ -25,7 +25,7 @@ function App() {
   return (
     <>
       <div className='flex flex-col items-center justify-center text-center p-4'>
-        <div className='w-96 h-96 mx-auto bg-slate-400 border-4 border-white rounded-md '>
+        <div className='w-96 h-96 mx-auto bg-blue-800 border-4 border-white rounded-md '>
           <header className='flex justify-evenly m-3'>
             <button className='bg-white text-lg font-bold'>{'<<'}</button>
             <button className='bg-white text-lg font-bold'>{'<'}</button>
@@ -39,8 +39,8 @@ function App() {
           <div className='flex justify-evenly'>
             {days.map((day) => (
               <div className='m-3'>
-                <div className='font-bold'>{day}</div>
-                <p className='font-bold'>{currentDate.getDate()}</p>
+                <div className='font-bold text-white'>{day}</div>
+                <p className='font-bold text-white'>{currentDate.getDate()}</p>
               </div>
             ))}
           </div>
