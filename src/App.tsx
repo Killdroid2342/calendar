@@ -19,9 +19,26 @@ function App() {
     'November',
     'December',
   ];
-  const dec = allMonths[currentDate.getMonth()];
 
-  console.log(currentDate);
+  // GETTING ALL THE DATES IN THE MONTH
+  function getAllDaysInMonth(year: number, month: number) {
+    const date = new Date(year, month);
+
+    const dates = [];
+
+    while (date.getMonth() === month) {
+      dates.push(new Date(date));
+      date.setDate(date.getDate() + 1);
+    }
+
+    return dates;
+  }
+  const now = new Date();
+  // 👇️ all days of the current month
+
+  console.log(getAllDaysInMonth(now.getFullYear(), now.getMonth()));
+
+  // console.log(currentDate);
   return (
     <>
       <div className='flex flex-col items-center justify-center text-center p-4'>
