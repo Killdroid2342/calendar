@@ -5,6 +5,7 @@ function App() {
 
   const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   const currentDate = new Date();
+  // all months are HERE
   let allMonths = [
     'January',
     'Febuary',
@@ -34,9 +35,9 @@ function App() {
     return dates;
   }
   const now = new Date();
-  // 👇️ all days of the current month
-
-  console.log(getAllDaysInMonth(now.getFullYear(), now.getMonth()));
+  // all days of the current month
+  let allTheDays = getAllDaysInMonth(now.getFullYear(), now.getMonth());
+  console.log(allTheDays);
 
   // console.log(currentDate);
   return (
@@ -57,9 +58,18 @@ function App() {
             {days.map((day) => (
               <div className='m-3'>
                 <div className='font-bold text-white'>{day}</div>
-                <p className='font-bold text-white'>{currentDate.getDate()}</p>
               </div>
             ))}
+          </div>
+          {/* dates */}
+          <div className='flex justify-evenly border-2 border-white fit-content'>
+            <p className='font-bold text-white border-2 border-red-600'>{}</p>
+            <p className='font-bold text-white border-2 border-red-600'>2</p>
+            <p className='font-bold text-white border-2 border-red-600'>3</p>
+            <p className='font-bold text-white border-2 border-red-600'>4</p>
+            <p className='font-bold text-white border-2 border-red-600'>5</p>
+            <p className='font-bold text-white border-2 border-red-600'>6</p>
+            <p className='font-bold text-white border-2 border-red-600'>7</p>
           </div>
         </div>
       </div>
