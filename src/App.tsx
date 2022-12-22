@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 function App() {
   const [monthIndex, setMonthIndex] = useState(new Date().getMonth());
 
-  const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-  const currentDate = new Date();
   // all months are HERE
   let allMonths = [
     'January',
@@ -27,7 +25,7 @@ function App() {
 
     const dates = [];
 
-    while (date.getMonth() === month) {
+    while (date.getMonth()) {
       dates.push(new Date(date));
       date.setDate(date.getDate() + 1);
     }
@@ -39,11 +37,19 @@ function App() {
   let allTheDays = getAllDaysInMonth(now.getFullYear(), now.getMonth());
   console.log(allTheDays);
 
-  // console.log(currentDate);
+  // getting different days
+  let dayOne = allTheDays[0].toString();
+  let dayTwo = allTheDays[1].toString();
+  let dayThree = allTheDays[2].toString();
+  let dayFour = allTheDays[3].toString();
+  let dayFive = allTheDays[4].toString();
+
+  console.log(dayOne);
+
   return (
     <>
       <div className='flex flex-col items-center justify-center text-center p-4'>
-        <div className='w-96 h-96 mx-auto bg-blue-800 border-4 border-white rounded-md '>
+        <div className='w-96 h-96 mx-auto bg-blue-800 border-4 border-white rounded-md'>
           <header className='flex justify-evenly m-3'>
             <button className='bg-white text-lg font-bold'>{'<<'}</button>
             <button className='bg-white text-lg font-bold'>{'<'}</button>
@@ -54,22 +60,32 @@ function App() {
             <button className='bg-white text-lg font-bold'>{'>>'}</button>
           </header>
           {/* MONDAY TO SUN */}
-          <div className='flex justify-evenly'>
-            {days.map((day) => (
-              <div className='m-3'>
-                <div className='font-bold text-white'>{day}</div>
-              </div>
-            ))}
-          </div>
+
           {/* dates */}
-          <div className='flex justify-evenly border-2 border-white fit-content'>
-            <p className='font-bold text-white border-2 border-red-600'>{}</p>
-            <p className='font-bold text-white border-2 border-red-600'>2</p>
-            <p className='font-bold text-white border-2 border-red-600'>3</p>
-            <p className='font-bold text-white border-2 border-red-600'>4</p>
-            <p className='font-bold text-white border-2 border-red-600'>5</p>
-            <p className='font-bold text-white border-2 border-red-600'>6</p>
-            <p className='font-bold text-white border-2 border-red-600'>7</p>
+          <div className='flex justify-evenly flex-col border-2 border-white '>
+            <div className='m-3 flex flex-row'>
+              <div className='font-bold text-white border-2 border-white'>
+                {dayOne}
+              </div>
+              <div className='font-bold text-white border-2 border-white'>
+                {dayTwo}
+              </div>
+            </div>
+            <div className='m-3 flex flex-row'>
+              <div className='font-bold text-white border-2 border-white'>
+                {dayThree}
+              </div>
+              <div className='font-bold text-white border-2 border-white'>
+                {dayFour}
+              </div>
+            </div>
+            <div className='m-3 flex flex-row'>
+              <div className='font-bold text-white border-2 border-white'>
+                {dayFive}
+              </div>
+            </div>
+
+            {/* last date */}
           </div>
         </div>
       </div>
