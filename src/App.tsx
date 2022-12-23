@@ -71,6 +71,7 @@ function App() {
   let dayTwent9 = allTheDays[28].toString();
   let dayThirt = allTheDays[29].toString();
   let dayThirt1 = allTheDays[30].toString();
+  console.log(dayOne);
   // new test
 
   return (
@@ -97,45 +98,111 @@ function App() {
           {/* dates */}
           <div className='flex justify-evenly flex-col border-2 border-white'>
             <div className='border-2 border-black flex flex-row m-3  '>
-              <p className='border-2 border-red-900 ml-8 p-2 text-white'>1</p>
-              <p className='border-2 border-red-900 ml-16 p-2 text-white'>2</p>
-              <p className='border-2 border-red-900 ml-16 p-2 text-white'>3</p>
-              <p className='border-2 border-red-900 ml-16 p-2 text-white'>4</p>
-              <p className='border-2 border-red-900 ml-16 p-2 text-white'>5</p>
-              <p className='border-2 border-red-900 ml-16 p-2 text-white'>6</p>
-              <p className='border-2 border-red-900 ml-16 p-2 text-white'>7</p>
+              <p className='border-2 border-red-900 ml-8 p-2 text-white w-20'></p>
+              <p className='border-2 border-red-900 ml-16 p-2 text-white w-20'></p>
+              <p className='border-2 border-red-900 ml-16 p-2 text-white w-20'></p>
+              <p className='border-2 border-red-900 ml-16 p-2 text-white w-20'></p>
+              <p className='border-2 border-red-900 ml-16 p-2 text-white w-20'>
+                {dayOne}
+              </p>
+              <p className='border-2 border-red-900 ml-16 p-2 text-white w-20'>
+                {dayTwo}
+              </p>
+              <p className='border-2 border-red-900 ml-16 p-2 text-white w-20'>
+                {dayThree}
+              </p>
             </div>
             <div className='border-2 border-black flex flex-row m-3  '>
-              <p className='border-2 border-red-900 ml-8 p-2 text-white'>8</p>
-              <p className='border-2 border-red-900 ml-16 p-2 text-white'>9</p>
-              <p className='border-2 border-red-900 ml-16 p-2 text-white'>10</p>
-              <p className='border-2 border-red-900 ml-16 p-2 text-white'>11</p>
-              <p className='border-2 border-red-900 ml-16 p-2 text-white'>12</p>
-              <p className='border-2 border-red-900 ml-16 p-2 text-white'>13</p>
-              <p className='border-2 border-red-900 ml-16 p-2 text-white'>14</p>
+              <p className='border-2 border-red-900 ml-8 p-2 text-white w-20'>
+                {dayFour}
+              </p>
+              <p className='border-2 border-red-900 ml-16 p-2 text-white w-20'>
+                {dayFive}
+              </p>
+              <p className='border-2 border-red-900 ml-16 p-2 text-white w-20'>
+                {daySix}
+              </p>
+              <p className='border-2 border-red-900 ml-16 p-2 text-white w-20'>
+                {daySev}
+              </p>
+              <p className='border-2 border-red-900 ml-16 p-2 text-white w-20'>
+                {dayEig}
+              </p>
+              <p className='border-2 border-red-900 ml-16 p-2 text-white w-20'>
+                {dayNin}
+              </p>
+              <p className='border-2 border-red-900 ml-16 p-2 text-white w-20'>
+                {dayTen}
+              </p>
             </div>
             <div className='border-2 border-black flex flex-row m-3  '>
-              <p className='border-2 border-red-900 ml-8 p-2 text-white'>15</p>
-              <p className='border-2 border-red-900 ml-16 p-2 text-white'>16</p>
-              <p className='border-2 border-red-900 ml-16 p-2 text-white'>17</p>
-              <p className='border-2 border-red-900 ml-16 p-2 text-white'>18</p>
-              <p className='border-2 border-red-900 ml-16 p-2 text-white'>19</p>
-              <p className='border-2 border-red-900 ml-16 p-2 text-white'>20</p>
-              <p className='border-2 border-red-900 ml-16 p-2 text-white'>21</p>
+              <p className='border-2 border-red-900 ml-8 p-2 text-white w-20'>
+                {dayEle}
+              </p>
+              <p className='border-2 border-red-900 ml-16 p-2 text-white w-20'>
+                {dayTwe}
+              </p>
+              <p className='border-2 border-red-900 ml-16 p-2 text-white w-20'>
+                {dayThir}
+              </p>
+              <p className='border-2 border-red-900 ml-16 p-2 text-white w-20'>
+                {dayFourt}
+              </p>
+              <p className='border-2 border-red-900 ml-16 p-2 text-white w-20'>
+                {dayFift}
+              </p>
+              <p className='border-2 border-red-900 ml-16 p-2 text-white w-20'>
+                {daySixt}
+              </p>
+              <p className='border-2 border-red-900 ml-16 p-2 text-white w-20'>
+                {daySevent}
+              </p>
             </div>
             <div className='border-2 border-black flex flex-row m-3  '>
-              <p className='border-2 border-red-900 ml-8 p-2 text-white'>22</p>
-              <p className='border-2 border-red-900 ml-16 p-2 text-white'>23</p>
-              <p className='border-2 border-red-900 ml-16 p-2 text-white'>24</p>
-              <p className='border-2 border-red-900 ml-16 p-2 text-white'>25</p>
-              <p className='border-2 border-red-900 ml-16 p-2 text-white'>26</p>
-              <p className='border-2 border-red-900 ml-16 p-2 text-white'>27</p>
-              <p className='border-2 border-red-900 ml-16 p-2 text-white'>28</p>
+              <p className='border-2 border-red-900 ml-8 p-2 text-white w-20'>
+                {dayEight}
+              </p>
+              <p className='border-2 border-red-900 ml-16 p-2 text-white w-20'>
+                {dayNinet}
+              </p>
+              <p className='border-2 border-red-900 ml-16 p-2 text-white w-20'>
+                {dayTwen}
+              </p>
+              <p className='border-2 border-red-900 ml-16 p-2 text-white w-20'>
+                {dayTwent1}
+              </p>
+              <p className='border-2 border-red-900 ml-16 p-2 text-white w-20'>
+                {dayTwent2}
+              </p>
+              <p className='border-2 border-red-900 ml-16 p-2 text-white w-20'>
+                {dayTwent3}
+              </p>
+              <p className='border-2 border-red-900 ml-16 p-2 text-white w-20'>
+                {dayTwent4}
+              </p>
             </div>
             <div className='border-2 border-black flex flex-row m-3  '>
-              <p className='border-2 border-red-900 ml-8 p-2 text-white'>29</p>
-              <p className='border-2 border-red-900 ml-16 p-2 text-white'>30</p>
-              <p className='border-2 border-red-900 ml-16 p-2 text-white'>31</p>
+              <p className='border-2 border-red-900 ml-8 p-2 text-white w-20'>
+                {dayTwent5}
+              </p>
+              <p className='border-2 border-red-900 ml-16 p-2 text-white w-20'>
+                {dayTwent6}
+              </p>
+              <p className='border-2 border-red-900 ml-16 p-2 text-white w-20'>
+                {dayTwent7}
+              </p>
+              <p className='border-2 border-red-900 ml-16 p-2 text-white w-20'>
+                {dayTwent8}
+              </p>
+              <p className='border-2 border-red-900 ml-16 p-2 text-white w-20'>
+                {dayTwent9}
+              </p>
+              <p className='border-2 border-red-900 ml-16 p-2 text-white w-20'>
+                {dayThirt}
+              </p>
+              <p className='border-2 border-red-900 ml-16 p-2 text-white w-20'>
+                {dayThirt1}
+              </p>
             </div>
           </div>
         </div>
