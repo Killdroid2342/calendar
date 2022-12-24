@@ -37,47 +37,44 @@ function App() {
   const now = new Date();
   // all days of the current month
   let allTheDays = getAllDaysInMonth(now.getFullYear(), now.getMonth());
-  // console.log(allTheDays);
-
   // getting different days
-  let dayOne = allTheDays[0].toString();
-  let dayTwo = allTheDays[1].toString();
-  let dayThree = allTheDays[2].toString();
-  let dayFour = allTheDays[3].toString();
-  let dayFive = allTheDays[4].toString();
-  let daySix = allTheDays[5].toString();
-  let daySev = allTheDays[6].toString();
-  let dayEig = allTheDays[7].toString();
-  let dayNin = allTheDays[8].toString();
-  let dayTen = allTheDays[9].toString();
-  let dayEle = allTheDays[10].toString();
-  let dayTwe = allTheDays[11].toString();
-  let dayThir = allTheDays[12].toString();
-  let dayFourt = allTheDays[13].toString();
-  let dayFift = allTheDays[14].toString();
-  let daySixt = allTheDays[15].toString();
-  let daySevent = allTheDays[16].toString();
-  let dayEight = allTheDays[17].toString();
-  let dayNinet = allTheDays[18].toString();
-  let dayTwen = allTheDays[19].toString();
-  let dayTwent1 = allTheDays[20].toString();
-  let dayTwent2 = allTheDays[21].toString();
-  let dayTwent3 = allTheDays[22].toString();
-  let dayTwent4 = allTheDays[23].toString();
-  let dayTwent5 = allTheDays[24].toString();
-  let dayTwent6 = allTheDays[25].toString();
-  let dayTwent7 = allTheDays[26].toString();
-  let dayTwent8 = allTheDays[27].toString();
-  let dayTwent9 = allTheDays[28].toString();
-  let dayThirt = allTheDays[29].toString();
-  let dayThirt1 = allTheDays[30].toString();
-  console.log(dayOne);
-  // new test
 
+  let dayOne = allTheDays[0].getDate();
+  let dayTwo = allTheDays[1].getDate();
+  let dayThree = allTheDays[2].getDate();
+  let dayFour = allTheDays[3].getDate();
+  let dayFive = allTheDays[4].getDate();
+  let daySix = allTheDays[5].getDate();
+  let daySev = allTheDays[6].getDate();
+  let dayEig = allTheDays[7].getDate();
+  let dayNin = allTheDays[8].getDate();
+  let dayTen = allTheDays[9].getDate();
+  let dayEle = allTheDays[10].getDate();
+  let dayTwe = allTheDays[11].getDate();
+  let dayThir = allTheDays[12].getDate();
+  let dayFourt = allTheDays[13].getDate();
+  let dayFift = allTheDays[14].getDate();
+  let daySixt = allTheDays[15].getDate();
+  let daySevent = allTheDays[16].getDate();
+  let dayEight = allTheDays[17].getDate();
+  let dayNinet = allTheDays[18].getDate();
+  let dayTwen = allTheDays[19].getDate();
+  let dayTwent1 = allTheDays[20].getDate();
+  let dayTwent2 = allTheDays[21].getDate();
+  let dayTwent3 = allTheDays[22].getDate();
+  let dayTwent4 = allTheDays[23].getDate();
+  let dayTwent5 = allTheDays[24].getDate();
+  let dayTwent6 = allTheDays[25].getDate();
+  let dayTwent7 = allTheDays[26].getDate();
+  let dayTwent8 = allTheDays[27].getDate();
+  let dayTwent9 = allTheDays[28].getDate();
+  let dayThirt = allTheDays[29].getDate();
+  let dayThirt1 = allTheDays[30].getDate();
+  // new test
   return (
     <>
       <div className='flex flex-col items-center justify-center text-center p-4'>
-        <div className='h-96 mx-auto bg-blue-800 border-4 border-white rounded-md overflow-auto '>
+        <div className='h-96 mx-auto bg-blue-800 border-4 border-white rounded-md overflow-auto scrollbar-thin scrollbar-thumb-black scrollbar-track-white '>
           <header className='flex justify-evenly m-3'>
             <button className='bg-white text-lg font-bold'>{'<<'}</button>
             <button className='bg-white text-lg font-bold'>{'<'}</button>
