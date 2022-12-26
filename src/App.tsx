@@ -10,6 +10,7 @@ const getFirstWeek = (year: number, month: number): Weeks => {
   const calendarDays = new Array(daysInMonth.getDate()).fill(undefined);
   calendarDays.forEach((_, i) => {
     let date = new Date(year, month, i + 1);
+    // console.log(date);
     if (date.getDay() == 6) {
       tempWeek[date.getDay()] = date;
       weeks.push(tempWeek);
@@ -17,8 +18,10 @@ const getFirstWeek = (year: number, month: number): Weeks => {
       return;
     }
     tempWeek[date.getDay()] = date;
+    // console.log(date);
+    console.log(tempWeek[1]);
   });
-  console.log(weeks);
+  weeks.push(tempWeek);
   return weeks;
 };
 
