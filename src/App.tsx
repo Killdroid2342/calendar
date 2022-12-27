@@ -18,8 +18,8 @@ const getFirstWeek = (year: number, month: number): Weeks => {
       return;
     }
     tempWeek[date.getDay()] = date;
-    // console.log(date);
-    console.log(tempWeek[1]);
+    console.log(date);
+    // console.log(tempWeek[1]);
   });
   weeks.push(tempWeek);
   return weeks;
@@ -45,16 +45,19 @@ function App() {
     'November',
     'December',
   ];
+
   const now = new Date();
+  const titleHead = now.getDate();
 
   // I WANT THE FIRST WEEK
   const calendar = getFirstWeek(now.getFullYear(), monthIndex);
-
+  console.log(calendar);
   // getting the days when click
 
   return (
     <>
       <div className='flex flex-col items-center justify-center text-center p-4'>
+        <h1 className='text-2xl font-bold text-white p-5'>{`Today is ${allMonths[monthIndex]} ${titleHead} `}</h1>
         <div className=' mx-auto bg-blue-800 border-4 border-white rounded-md overflow-auto scrollbar-thin scrollbar-thumb-black scrollbar-track-white '>
           <header className='flex justify-evenly m-3'>
             <button className='bg-white text-lg font-bold'>{'<<'}</button>
@@ -96,7 +99,13 @@ function App() {
                 <div className='border-2 border-black flex flex-row m-3  '>
                   {weeks.map((day) => {
                     return (
-                      <button className='border-2 border-red-900 ml-8 p-2 text-white w-20'>
+                      <button
+                        onClick={() => {
+                          let currentDate = day?.getDate();
+                          console.log(currentDate);
+                        }}
+                        className='border-2 border-red-900 ml-8 p-2 text-white w-20'
+                      >
                         {day?.getDate()}
                       </button>
                     );
@@ -105,6 +114,10 @@ function App() {
               );
             })}
           </div>
+        </div>
+        <div className='bg-blue-800 border-4 p-5 mt-10 border-white rounded-md'>
+          <h2 className='text-white font-bold'>{`You are on day ${'sad'}`}</h2>
+          <input className='mt-5' type='text' />
         </div>
       </div>
     </>
