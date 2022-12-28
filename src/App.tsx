@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 type Week = (Date | undefined)[];
 type Weeks = Week[];
@@ -18,8 +18,6 @@ const getFirstWeek = (year: number, month: number): Weeks => {
       return;
     }
     tempWeek[date.getDay()] = date;
-    console.log(date);
-    // console.log(tempWeek[1]);
   });
   weeks.push(tempWeek);
   return weeks;
@@ -51,14 +49,14 @@ function App() {
 
   // I WANT THE FIRST WEEK
   const calendar = getFirstWeek(now.getFullYear(), monthIndex);
-  console.log(calendar);
+  // console.log(calendar);
   // getting the days when click
 
   return (
     <>
       <div className='flex flex-col items-center justify-center text-center p-4'>
         <h1 className='text-2xl font-bold text-white p-5'>{`Today is ${allMonths[monthIndex]} ${titleHead} `}</h1>
-        <div className=' mx-auto bg-blue-800 border-4 border-white rounded-md overflow-auto scrollbar-thin scrollbar-thumb-black scrollbar-track-white '>
+        <div className=' mx-auto bg-blue-800 border-4 border-white rounded-md'>
           <header className='flex justify-evenly m-3'>
             <button className='bg-white text-lg font-bold'>{'<<'}</button>
             <button
@@ -116,7 +114,7 @@ function App() {
           </div>
         </div>
         <div className='bg-blue-800 border-4 p-5 mt-10 border-white rounded-md'>
-          <h2 className='text-white font-bold'>{`You are on day ${'sad'}`}</h2>
+          <h2 className='text-white font-bold'>{`You are on day ${'asd'}`}</h2>
           <input className='mt-5' type='text' />
         </div>
       </div>
