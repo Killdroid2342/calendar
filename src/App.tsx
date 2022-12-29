@@ -45,7 +45,6 @@ function App() {
   ];
 
   const now = new Date();
-  const titleHead = now.getDate();
 
   // I WANT THE FIRST WEEK
   const calendar = getFirstWeek(now.getFullYear(), monthIndex);
@@ -55,7 +54,7 @@ function App() {
   return (
     <>
       <div className='flex flex-col items-center justify-center text-center p-4'>
-        <h1 className='text-2xl font-bold text-white p-5'>{`Today is ${allMonths[monthIndex]} ${titleHead} `}</h1>
+        <h1 className='text-2xl font-bold text-white p-5'>{`Current month is ${allMonths[monthIndex]}`}</h1>
         <div className=' mx-auto bg-blue-800 border-4 border-white rounded-md'>
           <header className='flex justify-evenly m-3'>
             <button className='bg-white text-lg font-bold'>{'<<'}</button>
