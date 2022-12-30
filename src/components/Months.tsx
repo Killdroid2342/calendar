@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Dates = () => {
+const Months = () => {
   return <div></div>;
 };
 
-export default Dates;
+export default Months;

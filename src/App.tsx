@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Months from './components/Months';
 
 type Week = (Date | undefined)[];
 type Weeks = Week[];
@@ -54,8 +55,9 @@ function App() {
   return (
     <>
       <div className='flex flex-col items-center justify-center text-center p-4'>
-        <h1 className='text-2xl font-bold text-white p-5'>{`Current month is ${allMonths[monthIndex]}`}</h1>
+        <h1 className='text-2xl font-bold text-white p-5'>{`You are on ${allMonths[monthIndex]}`}</h1>
         <div className=' mx-auto bg-blue-800 border-4 border-white rounded-md'>
+          {/* changing months */}
           <header className='flex justify-evenly m-3'>
             <button className='bg-white text-lg font-bold'>{'<<'}</button>
             <button
@@ -112,6 +114,7 @@ function App() {
             })}
           </div>
         </div>
+        {/* DAYS SELECTED*/}
         <div className='bg-blue-800 border-4 p-5 mt-10 border-white rounded-md'>
           <h2 className='text-white font-bold'>{`You are on day ${'asd'}`}</h2>
           <input className='mt-5' type='text' />
