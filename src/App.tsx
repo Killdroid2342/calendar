@@ -58,31 +58,11 @@ function App() {
         <h1 className='text-2xl font-bold text-white p-5'>{`You are on ${allMonths[monthIndex]}`}</h1>
         <div className=' mx-auto bg-blue-800 border-4 border-white rounded-md'>
           {/* changing months */}
-          <header className='flex justify-evenly m-3'>
-            <button className='bg-white text-lg font-bold'>{'<<'}</button>
-            <button
-              className='bg-white text-lg font-bold'
-              onClick={() => {
-                if (monthIndex == 0) return setMonthIndex(11);
-                setMonthIndex(monthIndex - 1);
-              }}
-            >
-              {'<'}
-            </button>
-            <div className='bg-white text-lg font-bold'>
-              {allMonths[monthIndex]}
-            </div>
-            <button
-              className='bg-white text-lg font-bold'
-              onClick={() => {
-                if (monthIndex == 11) return setMonthIndex(0);
-                setMonthIndex(monthIndex + 1);
-              }}
-            >
-              {'>'}
-            </button>
-            <button className='bg-white text-lg font-bold'>{'>>'}</button>
-          </header>
+          <Months
+            monthIndex={monthIndex}
+            setMonthIndex={setMonthIndex}
+            allMonths={allMonths}
+          />
           {/* MONDAY TO SUN */}
           <div className='flex justify-evenly'>
             {days.map((day) => (
