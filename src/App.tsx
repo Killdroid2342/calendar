@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Months from './components/Months';
+import Days from './components/Days';
 
 type Week = (Date | undefined)[];
 type Weeks = Week[];
@@ -63,17 +64,10 @@ function App() {
             setMonthIndex={setMonthIndex}
             allMonths={allMonths}
           />
-          {/* MONDAY TO SUN */}
-          <div className='flex justify-evenly'>
-            {days.map((day) => (
-              <div className='m-3'>
-                <div className='font-bold text-white'>{day}</div>
-              </div>
-            ))}
-          </div>
+          <Days days={days} />
           {/* dates */}
           <div className='flex justify-evenly flex-col border-2 border-white'>
-            {calendar.map((weeks) => {
+            {calendar.map((weeks: any[]) => {
               return (
                 <div className='border-2 border-black flex flex-row m-3  '>
                   {weeks.map((day) => {
@@ -95,6 +89,7 @@ function App() {
           </div>
         </div>
         {/* DAYS SELECTED*/}
+
         <div className='bg-blue-800 border-4 p-5 mt-10 border-white rounded-md'>
           <h2 className='text-white font-bold'>{`You are on day ${'asd'}`}</h2>
           <input className='mt-5' type='text' />
