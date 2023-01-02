@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Months from './components/Months';
 import Days from './components/Days';
+import Dates from './components/Dates';
 
 type Week = (Date | undefined)[];
 type Weeks = Week[];
@@ -66,34 +67,9 @@ function App() {
           />
           <Days days={days} />
           {/* dates */}
-          <div className='flex justify-evenly flex-col border-2 border-white'>
-            {calendar.map((weeks: any[]) => {
-              return (
-                <div className='border-2 border-black flex flex-row m-3  '>
-                  {weeks.map((day) => {
-                    return (
-                      <button
-                        onClick={() => {
-                          let currentDate = day?.getDate();
-                          console.log(currentDate);
-                        }}
-                        className='border-2 border-red-900 ml-8 p-2 text-white w-20'
-                      >
-                        {day?.getDate()}
-                      </button>
-                    );
-                  })}
-                </div>
-              );
-            })}
-          </div>
+          <Dates getFirstWeek={getFirstWeek} calendar={calendar} />
         </div>
         {/* DAYS SELECTED*/}
-
-        <div className='bg-blue-800 border-4 p-5 mt-10 border-white rounded-md'>
-          <h2 className='text-white font-bold'>{`You are on day ${'asd'}`}</h2>
-          <input className='mt-5' type='text' />
-        </div>
       </div>
     </>
   );
