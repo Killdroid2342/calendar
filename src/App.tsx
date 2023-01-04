@@ -49,27 +49,20 @@ function App() {
 
   const now = new Date();
 
-  // I WANT THE FIRST WEEK
   const calendar = getFirstWeek(now.getFullYear(), monthIndex);
-  // console.log(calendar);
-  // getting the days when click
-
   return (
     <>
       <div className='flex flex-col items-center justify-center text-center p-4'>
         <h1 className='text-2xl font-bold text-white p-5'>{`You are on ${allMonths[monthIndex]}`}</h1>
         <div className=' mx-auto bg-blue-800 border-4 border-white rounded-md'>
-          {/* changing months */}
           <Months
             monthIndex={monthIndex}
             setMonthIndex={setMonthIndex}
             allMonths={allMonths}
           />
           <Days days={days} />
-          {/* dates */}
           <Dates getFirstWeek={getFirstWeek} calendar={calendar} />
         </div>
-        {/* DAYS SELECTED*/}
       </div>
     </>
   );
