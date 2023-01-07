@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Dates = ({ calendar }: any) => {
+  const [test, setTest] = useState();
+
   const testingh = calendar.day?.getDate();
   console.log(testingh);
   return (
