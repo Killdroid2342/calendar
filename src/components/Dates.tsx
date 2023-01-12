@@ -1,7 +1,12 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 
 const Dates = ({ calendar }: any) => {
   const [date, setDate] = useState();
+  const [text, setText] = useState('');
+
+  const type = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setText(e.target.value);
+  };
 
   return (
     <>
@@ -32,6 +37,8 @@ const Dates = ({ calendar }: any) => {
             <input
               className='mt-5  p-2 rounded-md border-2 border-black '
               type='text'
+              onChange={(e) => type(e)}
+              placeholder='Enter Text Here'
             />
             <button className='border-2 border-white rounded-md p-4 text-white font-bold mt-5'>
               Add Task
@@ -39,7 +46,7 @@ const Dates = ({ calendar }: any) => {
           </div>
           <div>
             <p className='text-white font-bold text-lg'>Current Tasks</p>
-            <p className='text-white mt-5'>{`No Tasks on this day`}</p>
+            <p className='text-white mt-5'>{text}</p>
           </div>
         </div>
       </div>
