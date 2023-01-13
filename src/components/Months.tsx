@@ -4,7 +4,7 @@ const Months = ({ monthIndex, setMonthIndex, allMonths }: any) => {
   return (
     <header className='flex justify-evenly m-3'>
       <button
-        className='bg-white text-lg font-bold'
+        className='text-red-800 text-lg font-bold'
         onClick={() => {
           if (monthIndex == 0) return setMonthIndex(11);
           setMonthIndex(monthIndex - 1);
@@ -13,7 +13,7 @@ const Months = ({ monthIndex, setMonthIndex, allMonths }: any) => {
         {'<<'}
       </button>
       <button
-        className='bg-white text-lg font-bold'
+        className='text-red-800 text-lg font-bold'
         onClick={() => {
           if (monthIndex == 0) return setMonthIndex(11);
           setMonthIndex(monthIndex - 1);
@@ -21,9 +21,11 @@ const Months = ({ monthIndex, setMonthIndex, allMonths }: any) => {
       >
         {'<'}
       </button>
-      <div className='bg-white text-lg font-bold'>{allMonths[monthIndex]}</div>
+      <div className='text-red-800 text-lg font-bold'>
+        {allMonths[monthIndex]}
+      </div>
       <button
-        className='bg-white text-lg font-bold'
+        className='text-red-800 text-lg font-bold'
         onClick={() => {
           if (monthIndex == 11) return setMonthIndex(0);
           setMonthIndex(monthIndex + 1);
@@ -32,7 +34,7 @@ const Months = ({ monthIndex, setMonthIndex, allMonths }: any) => {
         {'>'}
       </button>
       <button
-        className='bg-white text-lg font-bold'
+        className='text-red-800 text-lg font-bold'
         onClick={() => {
           if (monthIndex == 11) return setMonthIndex(0);
           setMonthIndex(monthIndex + 1);
