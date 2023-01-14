@@ -53,7 +53,6 @@ function App() {
   return (
     <>
       <div className='flex flex-col items-center justify-center text-center p-4'>
-        <h1 className='text-2xl font-bold text-red-800 p-5'>{`You are on ${allMonths[monthIndex]}`}</h1>
         <div className='mx-auto bg-white border-4 border-red-800 rounded-md'>
           <Months
             monthIndex={monthIndex}
