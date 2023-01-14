@@ -49,7 +49,7 @@ const Dates = ({ calendar }: any) => {
           </div>
           <div>
             <p className='text-red-800 font-bold text-lg'>Current Tasks</p>
-            <p className='text-red-800 mt-5'>{'this is a test'}</p>
+            <p className='text-red-800 mt-5'>{`this is a test: ${text}`}</p>
           </div>
         </div>
       </div>
