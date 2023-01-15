@@ -6,7 +6,7 @@ const Dates = ({ calendar }: any) => {
 
   const handleSubmit = (event: {
     preventDefault: () => void;
-    target: { elements: { item: { value: any } } };
+    target: { elements: { item: { value: never } } };
   }) => {
     event.preventDefault();
     setText([...text, event.target.elements.item.value]);
