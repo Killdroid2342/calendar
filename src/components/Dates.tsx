@@ -3,14 +3,12 @@ import { useState } from 'react';
 const Dates = ({ calendar }: any) => {
   const [date, setDate] = useState();
   const [text, setText] = useState([]);
+  const [inputValue, setInputValue] = useState('');
 
-  const handleSubmit = (event: {
-    preventDefault: () => void;
-    target: { elements: { item: { value: never } } };
-  }) => {
+  const handleSubmit = (event: { preventDefault: () => void }): any => {
     event.preventDefault();
-    setText([...text, event.target.elements.item.value]);
-    console.log(text);
+    setItems([...text, inputValue]);
+    setInputValue('');
   };
 
   return (
@@ -44,6 +42,8 @@ const Dates = ({ calendar }: any) => {
                 className='mt-5 p-2 rounded-md border-2 text-center border-black'
                 type='text'
                 placeholder='Enter Task Here'
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
               />
               <button className='border-2 border-red-800 rounded-md p-4 text-red-800 font-bold mt-5'>
                 Add Task
@@ -65,3 +65,6 @@ const Dates = ({ calendar }: any) => {
 };
 
 export default Dates;
+function setItems(arg0: any[]) {
+  throw new Error('Function not implemented.');
+}
