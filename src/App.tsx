@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Months from './components/Months';
 import Days from './components/Days';
-import Dates from './components/Dates';
+import Dates from './components/Dates/Dates';
 
 type Week = (Date | undefined)[];
 type Weeks = Week[];
