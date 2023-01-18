@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Months = ({ monthIndex, setMonthIndex, allMonths }: any) => {
   return (
     <header className='flex justify-evenly m-3'>

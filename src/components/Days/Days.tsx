@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Days = ({ days }: any) => {
   return (
     <div className='flex justify-evenly'>
