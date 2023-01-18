@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import FormDate from './FormDate/FormDate';
 
 interface Item {
   value: string;
@@ -7,13 +8,15 @@ interface Item {
 const Dates = ({ calendar }: any) => {
   const [date, setDate] = useState();
   // stacking events
-  const [items, setItems] = useState<Item[]>([]);
+  const [items, setItems] = useState<Item[]>(
+    /*JSON.parse(localStorage.getItem('items')) ??*/ []
+  );
   const [inputValue, setInputValue] = useState('');
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
     setItems([...items, { value: inputValue }]);
-    setInputValue('');
+    // Storage goes here
   };
   return (
     <>
@@ -37,31 +40,12 @@ const Dates = ({ calendar }: any) => {
             </div>
           );
         })}
-        <div>
-          <div className='bg- border-4 p-5 mt-10 border-red-800 rounded-md flex flex-col items-center'>
-            <h2 className='text-red-800 font-bold text-xl p-3'>{`You have selected day: ${date}`}</h2>
-            <p className='text-red-800 font-bold'>Add Event Below</p>
-            <form onSubmit={handleSubmit}>
-              <input
-                className='mt-5 p-2 rounded-md border-2 text-center border-black'
-                type='text'
-                placeholder='Enter Task Here'
-                onChange={(e) => setInputValue(e.target.value)}
-              />
-              <button className='border-2 border-red-800 rounded-md p-4 text-red-800 font-bold mt-5'>
-                Add Task
-              </button>
-            </form>
-          </div>
-          <div className='border-2 border-red-800 rounded-md'>
-            <p className='text-red-800 font-bold text-lg'>Current Tasks</p>
-            <ul>
-              {items.map((item, index) => (
-                <li key={index}>{item.value}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        <FormDate
+          handleSubmit={handleSubmit}
+          date={date}
+          setInputValue={setInputValue}
+          items={items}
+        />
       </div>
     </>
   );
