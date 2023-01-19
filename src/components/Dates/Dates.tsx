@@ -8,15 +8,19 @@ interface Item {
 const Dates = ({ calendar }: any) => {
   const [date, setDate] = useState();
   // stacking events
-  const [items, setItems] = useState<Item[]>(
-    /*JSON.parse(localStorage.getItem('items')) ??*/ []
-  );
+  const [items, setItems] = useState<Item[]>([]);
   const [inputValue, setInputValue] = useState('');
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
     setItems([...items, { value: inputValue }]);
     // Storage goes here
+    if (inputValue === '') return;
+    localStorage.setItem(
+      'items',
+      JSON.stringify([...items, { value: inputValue }])
+    );
+    setInputValue('');
   };
   return (
     <>
