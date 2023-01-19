@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import FormDate from './FormDate/FormDate';
 
 interface Item {
@@ -7,14 +7,21 @@ interface Item {
 
 const Dates = ({ calendar }: any) => {
   const [date, setDate] = useState();
-  // stacking events
   const [items, setItems] = useState<Item[]>([]);
+
+  useEffect(() => {
+    const data = localStorage.getItem('items');
+    if (data) {
+      setItems(JSON.parse(data));
+    }
+  }, []);
+
   const [inputValue, setInputValue] = useState('');
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
     setItems([...items, { value: inputValue }]);
-    // Storage goes here
+
     if (inputValue === '') return;
     localStorage.setItem(
       'items',
