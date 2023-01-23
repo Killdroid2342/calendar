@@ -26,30 +26,31 @@ const getFirstWeek = (year: number, month: number): Weeks => {
   return weeks;
 };
 
+// days
+const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+// all months are HERE
+let allMonths = [
+  'January',
+  'Febuary',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+];
+
 function App() {
+  const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
+  const [selectedDate, setSelectedDate] = useState(new Date().getDate());
   const [monthIndex, setMonthIndex] = useState(new Date().getMonth());
 
-  // days
-  const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-  // all months are HERE
-  let allMonths = [
-    'January',
-    'Febuary',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ];
-
-  const now = new Date();
-
-  const calendar = getFirstWeek(now.getFullYear(), monthIndex);
+  const calendar = getFirstWeek(selectedYear, monthIndex);
+  console.log('DATE: ', { selectedDate, monthIndex, selectedYear });
   return (
     <>
       <div className='flex flex-col items-center justify-center text-center p-4'>
@@ -60,7 +61,14 @@ function App() {
             allMonths={allMonths}
           />
           <Days days={days} />
-          <Dates getFirstWeek={getFirstWeek} calendar={calendar} />
+          <Dates
+            getFirstWeek={getFirstWeek}
+            calendar={calendar}
+            selectedDate={selectedDate}
+            selectedYear={selectedYear}
+            monthIndex={monthIndex}
+            setSelectedDate={setSelectedDate}
+          />
         </div>
       </div>
     </>
