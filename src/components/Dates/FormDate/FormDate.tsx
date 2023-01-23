@@ -1,10 +1,23 @@
 import React from 'react';
+import { Item } from '../Dates';
 
-const FormDate = ({ handleSubmit, date, setInputValue, items }: any) => {
+interface TProps {
+  handleSubmit: any;
+  selectedDate: number;
+  setInputValue: any;
+  items: Item[];
+}
+
+const FormDate = ({
+  handleSubmit,
+  selectedDate,
+  setInputValue,
+  items,
+}: TProps) => {
   return (
     <div>
       <div className='bg- border-4 p-5 mt-10 border-red-800 rounded-md flex flex-col items-center'>
-        <h2 className='text-red-800 font-bold text-xl p-3'>{`You have selected day: ${date}`}</h2>
+        <h2 className='text-red-800 font-bold text-xl p-3'>{`You have selected day: ${selectedDate}`}</h2>
         <p className='text-red-800 font-bold'>Add Event Below</p>
         <form onSubmit={handleSubmit}>
           <input
@@ -21,16 +34,9 @@ const FormDate = ({ handleSubmit, date, setInputValue, items }: any) => {
       <div className='border-2 border-red-800 rounded-md'>
         <p className='text-red-800 font-bold text-lg'>Current Tasks</p>
         <ul>
-          {items.map(
-            (
-              item: {
-                value: any;
-              },
-              index: undefined
-            ) => (
-              <li key={index}>{item.value}</li>
-            )
-          )}
+          {items.map((item) => (
+            <li key={item.id}>{item.value}</li>
+          ))}
         </ul>
       </div>
     </div>
