@@ -1,31 +1,74 @@
 import { useState, useEffect } from 'react';
 import FormDate from './FormDate/FormDate';
-
-interface Item {
+import { v4 as uuidv4 } from 'uuid'; // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
+export interface Item {
+  id: string;
   value: string;
+  date: string;
 }
 
-const Dates = ({ calendar }: any) => {
-  const [date, setDate] = useState();
+const Dates = ({
+  calendar,
+  selectedDate, // date
+  selectedYear, // year
+  monthIndex, // month
+  setSelectedDate,
+}: any) => {
   const [items, setItems] = useState<Item[]>([]);
-
-  useEffect(() => {
-    const data = localStorage.getItem('items');
-    if (data) {
-      setItems(JSON.parse(data));
-    }
-  }, []);
-
   const [inputValue, setInputValue] = useState('');
 
+  useEffect(() => {
+    // JSON value of list
+    const taskListRaw = localStorage.getItem('items');
+    // if exists carry on with logic
+    if (taskListRaw) {
+      const taskList = JSON.parse(taskListRaw);
+      const temp = [];
+      // TASK 1. Loop over taskList and console log each items
+      for (let i = 0; i < taskList.length; i++) {
+        console.log(taskList[i]);
+        // TASK 2. Try to check if the date matches the selected date for each item
+        if (
+          taskList[i].date === selectedDate &&
+          taskList[i].month === monthIndex &&
+          taskList[i].year === selectedYear
+        ) {
+          // TASK 3. If they do match push/append that task in a temp array.
+
+          temp.push(taskList[i]);
+        }
+      }
+      // TASK 4. Instead of setting taskList to items state set temp instead with appended values.
+      setItems(taskList);
+      // console.log(taskList);
+
+      //ONLY SET ITEMS THAT IS MAPPED TO CURREENT DATE i.e JSON.parse(data).date === currentDate?
+    }
+    //since it doesnt exist and the date has changed, reset item
+  }, [selectedDate, monthIndex, selectedYear]);
+  console.log('RENDER');
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    setItems([...items, { value: inputValue }]);
+    setItems([
+      ...items,
+      {
+        id: uuidv4(),
+        value: inputValue,
+        date: `${selectedDate}/${monthIndex}/${selectedYear}`,
+      },
+    ]);
 
     if (inputValue === '') return;
     localStorage.setItem(
       'items',
-      JSON.stringify([...items, { value: inputValue }])
+      JSON.stringify([
+        ...items,
+        {
+          id: uuidv4(),
+          value: inputValue,
+          date: `${selectedDate}/${monthIndex}/${selectedYear}`,
+        },
+      ])
     );
     setInputValue('');
   };
@@ -35,13 +78,14 @@ const Dates = ({ calendar }: any) => {
         {calendar.map((weeks: any[]) => {
           return (
             <div className='flex flex-row m-3  '>
-              {weeks.map((day) => {
+              {weeks.map((day, i) => {
                 return (
                   <button
                     onClick={() => {
                       let currentDate = day?.getDate();
-                      setDate(currentDate);
+                      setSelectedDate(currentDate);
                     }}
+                    key={i}
                     className='border-2 border-red-900 ml-8 p-2 text-red-800 w-20 font-bold'
                   >
                     {day?.getDate()}
@@ -53,7 +97,7 @@ const Dates = ({ calendar }: any) => {
         })}
         <FormDate
           handleSubmit={handleSubmit}
-          date={date}
+          selectedDate={selectedDate}
           setInputValue={setInputValue}
           items={items}
         />
