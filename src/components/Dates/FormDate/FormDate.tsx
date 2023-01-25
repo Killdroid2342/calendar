@@ -34,7 +34,10 @@ const FormDate = ({
         <p className='text-red-800 font-bold text-lg'>Current Tasks</p>
         <ul>
           {items.map((item) => (
-            <li key={item.id}>{item.value}</li>
+            <li key={item.id}>
+              {item.value}
+              {item.date}
+            </li>
           ))}
         </ul>
       </div>
