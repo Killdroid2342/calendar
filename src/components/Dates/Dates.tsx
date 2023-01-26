@@ -9,9 +9,9 @@ export interface Item {
 
 const Dates = ({
   calendar,
-  selectedDate, // date
-  selectedYear, // year
-  monthIndex, // month
+  selectedDate,
+  selectedYear,
+  monthIndex,
   setSelectedDate,
 }: any) => {
   const [items, setItems] = useState<Item[]>([]);
@@ -21,18 +21,10 @@ const Dates = ({
     const taskListRaw = localStorage.getItem('items');
     if (taskListRaw) {
       const taskList = JSON.parse(taskListRaw);
-      const temp = [];
-      for (let i = 0; i < taskList.length; i++) {
-        console.log(taskList[i]);
-        if (
-          taskList[i].date === selectedDate &&
-          taskList[i].month === monthIndex &&
-          taskList[i].year === selectedYear
-        ) {
-          temp.push(taskList[i]);
-        }
-      }
-      setItems(taskList);
+      const filteredTasks = taskList.filter((task: Item) => {
+        return task.date === `${selectedDate}/${monthIndex}/${selectedYear}`;
+      });
+      setItems(filteredTasks);
     }
   }, [selectedDate, monthIndex, selectedYear]);
   console.log('RENDER');
