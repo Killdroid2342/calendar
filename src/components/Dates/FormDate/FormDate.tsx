@@ -2,6 +2,7 @@ import { Item } from '../Dates';
 
 interface TProps {
   handleSubmit: any;
+  handleDelete: any;
   selectedDate: number;
   setInputValue: any;
   items: Item[];
@@ -10,6 +11,7 @@ interface TProps {
 const FormDate = ({
   handleSubmit,
   selectedDate,
+  handleDelete,
   setInputValue,
   items,
 }: TProps) => {
@@ -20,7 +22,19 @@ const FormDate = ({
         <p className='text-red-800 font-bold'>Events:</p>
         <div className='flex flex-col'>
           {items.map((item: Item) => {
-            return <p key={item.id}>{item.value}</p>;
+            return (
+              <div key={item.id}>
+                <div className='flex flex-row'>
+                  <p className='text-2xl'>{item.value}</p>
+                  <button
+                    className='border-2 border-red-900 p-1 rounded-md text-red-800 font-bold'
+                    onClick={() => handleDelete(item.id)}
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
+            );
           })}
         </div>
         <p className='text-red-800 font-bold'>Add Event Below</p>
