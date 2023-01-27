@@ -30,6 +30,7 @@ const Dates = ({
   console.log('RENDER');
   const handleSubmit = (event: any) => {
     event.preventDefault();
+    if (inputValue === '') return;
     setItems([
       ...items,
       {
@@ -39,7 +40,6 @@ const Dates = ({
       },
     ]);
 
-    if (inputValue === '') return;
     localStorage.setItem(
       'items',
       JSON.stringify([
@@ -53,12 +53,19 @@ const Dates = ({
     );
     setInputValue('');
   };
+  const handleDelete = (id: string) => {
+    setItems(items.filter((item: Item) => item.id !== id));
+    localStorage.setItem(
+      'items',
+      JSON.stringify(items.filter((item: Item) => item.id !== id))
+    );
+  };
   return (
     <>
       <div className='flex justify-evenly flex-col border-2 border-red-800'>
-        {calendar.map((weeks: any[]) => {
+        {calendar.map((weeks: any[], index: any) => {
           return (
-            <div className='flex flex-row m-3  '>
+            <div key={index} className='flex flex-row m-3  '>
               {weeks.map((day, i) => {
                 return (
                   <button
@@ -81,6 +88,7 @@ const Dates = ({
           selectedDate={selectedDate}
           setInputValue={setInputValue}
           items={items}
+          handleDelete={handleDelete}
         />
       </div>
     </>
