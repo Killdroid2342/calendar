@@ -13,7 +13,6 @@ const getFirstWeek = (year: number, month: number): Weeks => {
   const calendarDays = new Array(daysInMonth.getDate()).fill(undefined);
   calendarDays.forEach((_, i) => {
     let date = new Date(year, month, i + 1);
-    // console.log(date);
     if (date.getDay() == 6) {
       tempWeek[date.getDay()] = date;
       weeks.push(tempWeek);
@@ -25,10 +24,7 @@ const getFirstWeek = (year: number, month: number): Weeks => {
   weeks.push(tempWeek);
   return weeks;
 };
-
-// days
 const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-// all months are HERE
 let allMonths = [
   'January',
   'Febuary',
@@ -48,9 +44,7 @@ function App() {
   const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
   const [selectedDate, setSelectedDate] = useState(new Date().getDate());
   const [monthIndex, setMonthIndex] = useState(new Date().getMonth());
-
   const calendar = getFirstWeek(selectedYear, monthIndex);
-  console.log('DATE: ', { selectedDate, monthIndex, selectedYear });
   return (
     <>
       <div className='flex flex-col items-center justify-center text-center p-4'>
@@ -59,6 +53,8 @@ function App() {
             monthIndex={monthIndex}
             setMonthIndex={setMonthIndex}
             allMonths={allMonths}
+            selectedYear={selectedYear}
+            setSelectedYear={setSelectedYear}
           />
           <Days days={days} />
           <Dates

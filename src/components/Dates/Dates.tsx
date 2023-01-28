@@ -27,7 +27,6 @@ const Dates = ({
       setItems(filteredTasks);
     }
   }, [selectedDate, monthIndex, selectedYear]);
-  console.log('RENDER');
   const handleSubmit = (event: any) => {
     event.preventDefault();
     if (inputValue === '') return;
@@ -39,7 +38,6 @@ const Dates = ({
         date: `${selectedDate}/${monthIndex}/${selectedYear}`,
       },
     ]);
-
     localStorage.setItem(
       'items',
       JSON.stringify([
