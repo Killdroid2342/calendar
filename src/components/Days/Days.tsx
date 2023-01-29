@@ -3,7 +3,7 @@ const Days = ({ days }: any) => {
     <div className='flex justify-evenly'>
       {days.map((day: any, index: any) => (
         <div className='m-3' key={index}>
-          <div className='font-bold text-red-800'>{day}</div>
+          <div className='font-bold text-white'>{day}</div>
         </div>
       ))}
     </div>

@@ -60,7 +60,7 @@ const Dates = ({
   };
   return (
     <>
-      <div className='flex justify-evenly flex-col border-2 border-red-800'>
+      <div className='flex justify-evenly flex-col'>
         {calendar.map((weeks: any[], index: any) => {
           return (
             <div key={index} className='flex flex-row m-3  '>
@@ -72,7 +72,7 @@ const Dates = ({
                       setSelectedDate(currentDate);
                     }}
                     key={i}
-                    className='border-2 border-red-900 ml-8 p-2 text-red-800 w-20 font-bold'
+                    className='border-2 border-white ml-8 p-2 text-white w-20 font-bold rounded-2xl'
                   >
                     {day?.getDate()}
                   </button>
@@ -81,13 +81,19 @@ const Dates = ({
             </div>
           );
         })}
-        <FormDate
-          handleSubmit={handleSubmit}
-          selectedDate={selectedDate}
-          setInputValue={setInputValue}
-          items={items}
-          handleDelete={handleDelete}
-        />
+        {selectedDate ? (
+          <FormDate
+            handleSubmit={handleSubmit}
+            selectedDate={selectedDate}
+            setInputValue={setInputValue}
+            items={items}
+            handleDelete={handleDelete}
+          />
+        ) : (
+          <div className='text-center font-bold text-white text-2xl p-20'>
+            No date selected
+          </div>
+        )}
       </div>
     </>
   );

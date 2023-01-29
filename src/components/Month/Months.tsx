@@ -8,7 +8,7 @@ const Months = ({
   return (
     <header className='flex justify-evenly m-3'>
       <button
-        className='text-red-800 text-lg font-bold'
+        className='text-white text-lg font-bold'
         onClick={() => {
           setSelectedYear(selectedYear - 1);
         }}
@@ -16,7 +16,7 @@ const Months = ({
         {'<<'}
       </button>
       <button
-        className='text-red-800 text-lg font-bold'
+        className='text-white text-lg font-bold'
         onClick={() => {
           if (monthIndex == 0) return setMonthIndex(11);
           setMonthIndex(monthIndex - 1);
@@ -24,11 +24,11 @@ const Months = ({
       >
         {'<'}
       </button>
-      <div className='text-red-800 text-lg font-bold'>
+      <div className='text-white text-lg font-bold'>
         {allMonths[monthIndex]}: {selectedYear}
       </div>
       <button
-        className='text-red-800 text-lg font-bold'
+        className='text-white text-lg font-bold'
         onClick={() => {
           if (monthIndex == 11) return setMonthIndex(0);
           setMonthIndex(monthIndex + 1);
@@ -37,7 +37,7 @@ const Months = ({
         {'>'}
       </button>
       <button
-        className='text-red-800 text-lg font-bold'
+        className='text-white text-lg font-bold'
         onClick={() => {
           setSelectedYear(selectedYear + 1);
         }}

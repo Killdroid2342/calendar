@@ -48,7 +48,7 @@ function App() {
   return (
     <>
       <div className='flex flex-col items-center justify-center text-center p-4'>
-        <div className='mx-auto bg-white border-4 border-red-800 rounded-md'>
+        <div className='mx-auto bg-white border-4 border-silver-900 rounded-md bg-opacity-25'>
           <Months
             monthIndex={monthIndex}
             setMonthIndex={setMonthIndex}
