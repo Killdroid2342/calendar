@@ -10,7 +10,10 @@ body {
   box-sizing: border-box;
 }
 body {
-  background-color: #181818;
+  background-image: url(/src/assets/images/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
 @tailwind base;
