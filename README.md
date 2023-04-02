@@ -1,0 +1,1 @@
+This calendar allows users to add tasks on a specific day of their choice. The tasks are stored in local storage, so if the user returns to the website, their tasks will still be available. This feature enhances the user experience by providing a convenient way to manage their daily tasks, and ensures that their data is saved even if they leave the website or close the browser.
